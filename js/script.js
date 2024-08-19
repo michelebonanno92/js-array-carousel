@@ -26,14 +26,35 @@ Consigli del giorno:
 */
 
 
+
+const imagesContainer = document.querySelector('.img-container');
+console.log('imagesContainer', imagesContainer, typeof imagesContainer);
+
+
 // array contenitore delle immaggini 
 const images = [
-    'img/01.jpg',
-    'img/02.jpg',
-    'img/03.jpg',
-    'img/04.jpg',
-    'img/05.jpg'
+    'img/01.webp',
+    'img/02.webp',
+    'img/03.webp',
+    'img/04.webp',
+    'img/05.webp'
 ];
+
+for (let i = 0; i < images.length; i++){
+// console.log(images[i]);
+    if ( i == 0) {
+         imagesContainer.innerHTML += `<img src="${images[i]}" class="active">`;
+    }
+    else{
+        imagesContainer.innerHTML += `<img src="${images[i]}">`;
+    }
+}
+
+
+
+
+
+
 
 
 

@@ -39,12 +39,17 @@ main{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: none;
 }
-
 
 button{
   cursor: pointer;
 }
+
+.my-carousel .img-container > img.active{
+  display: block;
+}
+
 
 
 
