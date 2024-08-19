@@ -8,35 +8,44 @@ reset
     box-sizing: border-box;
  }
 /* struttura pagina html */
- .container{
-   height: 90vh;
-   width: 1800px;
-   margin: 0 auto;
-   background-color: lightcoral;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 20px;
-   margin-top: 60px;
+
+main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .my-carousel{
+   height: 500px;
+   width: 800px;
  }
 
-.container-img{
-   width: 600px;
-   height: 600px;
+.my-carousel .controls-container{
+  height: 100px;
+  display: flex;
 }
- img{
-   max-width: 100%;
-   border-radius: 20px;
- }
+
+.my-carousel .controls-container > *{
+  width: 50%;
+}
+
+.my-carousel .img-container {
+  height: 400px;
+  background-color: aqua;
+}
+
+.my-carousel .img-container > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 button{
-  border-radius: 10px;
-  padding: 10px 30px;
-  margin-left: 200px;
-  margin-right: 200px;
   cursor: pointer;
-  margin-top: 80px;
 }
+
 
 
 
