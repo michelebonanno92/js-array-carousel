@@ -27,8 +27,8 @@ Consigli del giorno:
 
 
 
-const imagesContainer = document.querySelector('.img-container');
-console.log('imagesContainer', imagesContainer, typeof imagesContainer);
+const imgContainer = document.querySelector('.img-container');
+console.log('imgContainer', imgContainer, typeof imgContainer);
 
 
 // array contenitore delle immaggini 
@@ -43,13 +43,36 @@ const images = [
 for (let i = 0; i < images.length; i++){
 // console.log(images[i]);
     if ( i == 0) {
-         imagesContainer.innerHTML += `<img src="${images[i]}" class="active">`;
+         imgContainer.innerHTML += `<img src="${images[i]}" class="active">`;
     }
     else{
-        imagesContainer.innerHTML += `<img src="${images[i]}">`;
+        imgContainer.innerHTML += `<img src="${images[i]}">`;
     }
 }
 
+let activeImg = 1;
+
+const nexButton = document.getElementById('next-button');
+nexButton.addEventListener('click', function () {
+    if (activeImg < images.length){
+        document.querySelector('.img-container > img:nth-child('+ activeImg +')').classList.remove('active');
+
+        activeImg++;
+      
+        document.querySelector('.img-container > img:nth-child('+ activeImg +')').classList.add('active');
+    }
+});
+
+const prevButton = document.getElementById('prev-button');
+prevButton.addEventListener('click', function () {
+    if (activeImg > 1){
+        document.querySelector('.img-container > img:nth-child('+ activeImg  +')').classList.remove('active');
+
+        activeImg --;
+      
+        document.querySelector('.img-container > img:nth-child('+ activeImg  +')').classList.add('active');
+    }
+});
 
 
 
