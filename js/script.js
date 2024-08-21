@@ -64,41 +64,28 @@ let activeImg = 0;
 
 const nexButton = document.getElementById('next-button');
 nexButton.addEventListener('click', function () {
-    if (activeImg < (images.length - 1)){
-        allimgs[activeImg].classList.remove('active');
+    allimgs[activeImg].classList.remove('active');
 
+    if (activeImg < (images.length - 1)){
         activeImg++;
-      
-        allimgs[activeImg].classList.add('active');
     }
     else{
-        allimgs[activeImg].classList.remove('active');
-
         activeImg = 0 ;
-      
-        allimgs[activeImg].classList.add('active');
     }
-  
-
-   
+    allimgs[activeImg].classList.add('active');
 });
 
 const prevButton = document.getElementById('prev-button');
 prevButton.addEventListener('click', function () {
-    if (activeImg > 0){
-        allimgs[activeImg].classList.remove('active');
+    allimgs[activeImg].classList.remove('active');
 
+    if (activeImg > 0){
         activeImg --;
-      
-        allimgs[activeImg].classList.add('active');
     }
     else{
-        allimgs[activeImg].classList.remove('active');
-
-        activeImg = 4 ;
-      
-        allimgs[activeImg].classList.add('active');
+        activeImg = 4 ; 
     }
+    allimgs[activeImg].classList.add('active');
 });
 
 
