@@ -54,6 +54,12 @@ for (let i = 0; i < images.length; i++){
 const allimgs = document.querySelectorAll('.img-container > img');
 console.log('allimgs', allimgs, typeof allimgs);
 
+// const firstImg = document.querySelector('.img-container > img');
+// console.log('firstImg', firstImg, typeof firstImg);
+
+// const lastImg = document.querySelector('.img-container > img' + 4);
+// console.log('lastImg', lastImg, typeof lastImg);
+
 let activeImg = 0;
 
 const nexButton = document.getElementById('next-button');
@@ -65,6 +71,16 @@ nexButton.addEventListener('click', function () {
       
         allimgs[activeImg].classList.add('active');
     }
+    else{
+        allimgs[activeImg].classList.remove('active');
+
+        activeImg = 0 ;
+      
+        allimgs[activeImg].classList.add('active');
+    }
+  
+
+   
 });
 
 const prevButton = document.getElementById('prev-button');
@@ -73,6 +89,13 @@ prevButton.addEventListener('click', function () {
         allimgs[activeImg].classList.remove('active');
 
         activeImg --;
+      
+        allimgs[activeImg].classList.add('active');
+    }
+    else{
+        allimgs[activeImg].classList.remove('active');
+
+        activeImg = 4 ;
       
         allimgs[activeImg].classList.add('active');
     }
