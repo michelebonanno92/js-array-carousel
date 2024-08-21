@@ -26,7 +26,7 @@ Consigli del giorno:
 */
 
 
-
+// queryselector prende il primo elemento che soddisfa una determinata condizione ( il primo elemento di una classe)
 const imgContainer = document.querySelector('.img-container');
 console.log('imgContainer', imgContainer, typeof imgContainer);
 
@@ -50,27 +50,31 @@ for (let i = 0; i < images.length; i++){
     }
 }
 
-let activeImg = 1;
+// query selectorall prende un array di elementi che soddisfano una  condizione 
+const allimgs = document.querySelectorAll('.img-container > img');
+console.log('allimgs', allimgs, typeof allimgs);
+
+let activeImg = 0;
 
 const nexButton = document.getElementById('next-button');
 nexButton.addEventListener('click', function () {
-    if (activeImg < images.length){
-        document.querySelector('.img-container > img:nth-child('+ activeImg +')').classList.remove('active');
+    if (activeImg < (images.length - 1)){
+        allimgs[activeImg].classList.remove('active');
 
         activeImg++;
       
-        document.querySelector('.img-container > img:nth-child('+ activeImg +')').classList.add('active');
+        allimgs[activeImg].classList.add('active');
     }
 });
 
 const prevButton = document.getElementById('prev-button');
 prevButton.addEventListener('click', function () {
-    if (activeImg > 1){
-        document.querySelector('.img-container > img:nth-child('+ activeImg  +')').classList.remove('active');
+    if (activeImg > 0){
+        allimgs[activeImg].classList.remove('active');
 
         activeImg --;
       
-        document.querySelector('.img-container > img:nth-child('+ activeImg  +')').classList.add('active');
+        allimgs[activeImg].classList.add('active');
     }
 });
 
